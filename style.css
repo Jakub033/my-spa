@@ -7,33 +7,46 @@ body {
 	padding: 0;
 	width: 100%;
 }
+
 header {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 }
-Header-links ul {
-	width: 60%;
-	list-style: none;
-	display: flex;
-	justify-content: space-around;
+
+/* Styl dla listy */
+.nav-links {
+	display: flex; /* Używamy flexboxa */
+	justify-content: center;
+	align-items: center; /* Wyśrodkowanie elementów w poziomie */
+	position: absolute; /* Absolutne pozycjonowanie */
+	top: 10px; /* Odstęp od góry */
+	left: 50%; /* Ustawiamy środek */
+	transform: translateX(-50%); /* Wyśrodkowanie względem szerokości */
+	list-style: none; /* Usuwamy punkty listy */
+	padding: 0; /* Usuwamy odstępy */
 }
+
 .header-link {
-	padding: 0.4rem;
-	border-radius: 2px;
-	cursor: pointer;
+	font-size: 18px; /* Rozmiar czcionki */
+	margin-bottom: 10px; /* Odstęp między odnośnikami */
+	margin: 0 20px;
+	cursor: pointer; /* Kursor jako wskaźnik */
 }
-.header- link:hover {
-	border-bottom: 1px solid white;
+
+.header-link:hover {
+	text-decoration: underline; /* Podkreślenie po najechaniu */
 }
 main {
 	padding: 2rem;
 	font-size: 1rem;
 }
+
 .title {
 	font-size: 3rem;
 }
 
+/*tryb ciemny*/
 body.dark-mode {
 	background-color: #121212;
 	color: #ffffff;
@@ -41,6 +54,85 @@ body.dark-mode {
 .dark-mode header {
 	background-color: #1e1e1e;
 }
-.dark- mode .header- link:hover {
+.dark-mode .header-link:hover {
 	border-bottom: 1px solid #ffffff;
+}
+
+/* Dodanie galerii - układ 3x3 */
+.gallery-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr); /* 3 kolumny */
+	gap: 10px; /* Odstęp między obrazami */
+	max-width: 900px; /* Ograniczenie szerokości */
+	margin: 0 auto; /* Wyśrodkowanie */
+}
+
+.gallery-grid img {
+	width: 100%; /* Obrazy zajmują pełną szerokość siatki */
+	height: 300px; /* Stała wysokość dla obrazów */
+	object-fit: cover; /* Dopasowanie obrazu, zachowując proporcje */
+	border-radius: 5px; /* Zaokrąglone rogi */
+	cursor: pointer; /* Kursor wskazuje na klikalność */
+}
+
+/* Styl modala */
+.modal {
+	display: none; /* Ukryty na początku */
+	position: fixed;
+	z-index: 1; /* Na wierzchu */
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8); /* Przezroczyste tło */
+	display: flex; /* Flexbox do wyśrodkowania */
+	justify-content: center;
+	align-items: center;
+}
+
+/* Styl dla obrazka w modal */
+.modal-content {
+	max-width: 90%; /* Maksymalna szerokość */
+	max-height: 80vh; /* Maksymalna wysokość */
+	object-fit: contain; /* Dopasowanie proporcji obrazu */
+}
+
+/* Styl dla przycisku zamknięcia (X) */
+.close {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+/* Styl dla kontenera nagłówka */
+.header {
+	display: flex;
+	justify-content: space-between; /* Ustawia elementy po przeciwnych stronach */
+	align-items: center; /* Wyśrodkowuje elementy w pionie */
+	padding: 10px 20px; /* Padding dla przestrzeni wewnętrznej */
+}
+
+/* Styl dla przycisku "Google theme" */
+#togle-theme {
+	font-size: 16px;
+	padding: 10px 20px;
+	cursor: pointer;
+	background-color: #4caf50; /* Zielony przycisk (można zmienić) */
+	color: white;
+	border: none;
+	border-radius: 5px;
+}
+
+#google-theme:hover {
+	background-color: #45a049; /* Mrożona wersja zielonego przycisku */
+}
+
+.close:hover,
+.close:focus {
+	text-decoration: none;
+	cursor: pointer;
 }
