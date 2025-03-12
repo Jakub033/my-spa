@@ -25,7 +25,7 @@ function RenderAboutPage() {
 }
 function RenderContactPage() {
 	document.querySelector("main").innerHTML = `
-    <h1 class="title">Contact with me</h1>
+	<h1 class="title">Contact with me</h1>
 		<form id="contact-form">
 	<label for="name">Name:</label>
 	<input type="text" id="name" name="name" required>
@@ -35,7 +35,7 @@ function RenderContactPage() {
 	<textarea id="message" name="message" required></textarea>
 	<button type="submit">Send</button>
 	</form>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>`;
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>`;
 	document
 		.getElementById("contact-form")
 		.addEventListener("submit", (event) => {
